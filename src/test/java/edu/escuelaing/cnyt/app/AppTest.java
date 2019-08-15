@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import edu.escuelaing.cnyt.app.*;
 
 /**
  * Unit test for simple App.
@@ -29,11 +30,28 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
+    /*
+    public void PruebaSuma()
+    {        
+        App aplicacion= new App();
+        Boolean flag=false;
+        double[] respuestaEsperada= new double[] {};
+        aplicacion.reales.add("5");
+        aplicacion.reales.add("8");
+        aplicacion.imaginarios.add("-6");
+        aplicacion.imaginarios.add("9");
+        respuestaEsperada=aplicacion.suma();
+        assertEquals(-1, respuestaEsperada[0]);
+        assertEquals(17, respuestaEsperada[1]);
+        
+    }*/
+        
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void PruebaDivision()
     {        
         assertTrue( true );
     }
+
 }
