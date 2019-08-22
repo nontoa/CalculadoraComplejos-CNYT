@@ -17,6 +17,28 @@ git clone https://github.com/nontoa/CalculadoraComplejos-CNYT.git
 
 * [Maven](https://maven.apache.org/) - Gestión de dependencias
 
+## Funcionamiento del programa:
+
+### Menu:
+
+Hay un menú para elegir la operacion a realizar con n números complejos.
+
+![Screenshot](images/Menu.PNG)
+
+### Ingresando datos y resultado:
+
+Escogemos una opción del menú y digitamos el número correspondiente y presionamos enter.
+
+Luego nos pedirá la cantidad de números complejos para la operación.
+
+Enseguida digitaremos los números separados por un espacio la parte real y la parte imaginaria.
+
+Por último veremos el resultado en este caso de la multiplicación de los números.
+
+![Screenshot](images/Operacion.PNG)
+
+Hay que tener en cuenta que el programa no acaba hasta que no elijan la opción 10 (Salir).
+
 ## Descripción del programa:
 
 ## Código encargado para operaciones lógicas.
