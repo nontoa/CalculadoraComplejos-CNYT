@@ -19,7 +19,7 @@ git clone https://github.com/nontoa/CalculadoraComplejos-CNYT.git
 
 ## Números complejos:
 
-Los números complejos son una extensión de los números reales y forman un cuerpo algebraicamente cerrado. El conjunto de los números complejos se designa con la notación {\displaystyle \scriptstyle \mathbb {C} } \scriptstyle {\mathbb  {C}}, siendo {\displaystyle \scriptstyle \mathbb {R} } \scriptstyle {\mathbb  {R}} el conjunto de los números reales se cumple que {\displaystyle \scriptstyle \mathbb {R} \subset \mathbb {C} } \scriptstyle {\mathbb  {R}}\subset {\mathbb  {C}} ( {\displaystyle \scriptstyle \mathbb {R} } \scriptstyle {\mathbb  {R}} está estrictamente contenido en {\displaystyle \scriptstyle \mathbb {C} } \scriptstyle {\mathbb  {C}}). Los números complejos incluyen todas las raíces de los polinomios, a diferencia de los reales. Todo número complejo puede representarse como la suma de un número real y un número imaginario (que es un múltiplo real de la unidad imaginaria, que se indica con la letra i), o en forma polar.
+Un número complejo, es una entidad matemática que viene dada por un par de números reales, el primero x se denomina la parte real y al segundo y la parte imaginaria. Los números complejos se representa por un par de números entre paréntesis (x, y), como los puntos del plano, o bien, en la forma usual de x+yi, i se denomina la unidad imaginaria, la raíz cuadrada de menos uno.
 
 ## Funcionamiento del programa:
 
