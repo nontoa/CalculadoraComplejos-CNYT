@@ -1,11 +1,11 @@
-# Laboratorio 1 AREP
+# Calculadora Complejos
 
 
 ## Empezando
 
 >Para clonar el archivo 
 
-git clone https://github.com/nontoa/LAB1-AREP.git
+git clone https://github.com/nontoa/CalculadoraComplejos-CNYT.git
 >
 ### Prerrequisitos
 * Maven
@@ -322,7 +322,7 @@ public class App {
 ## Autor
 
 
-* **Juan Nicolas Nontoa Caballero**  LAB1-AREP - [nontoa] (https://github.com/nontoa)
+* **Juan Nicolas Nontoa Caballero**  CalculadoraComplejos-CNYT - [nontoa] (https://github.com/nontoa)
 
 ## licencia
 
