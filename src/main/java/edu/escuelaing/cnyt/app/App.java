@@ -11,18 +11,16 @@ import edu.escuelaing.cnyt.app.Complejo;
 public class App {
 
     public static int cantidad;
-    public static ArrayList<String> reales;
-    public static ArrayList<String> imaginarios;
-
+    public static ArrayList<String> reales = new ArrayList<String>();
+    public static ArrayList<String> imaginarios = new ArrayList<String>();
+    public static ArrayList<Double> res = new ArrayList<Double>();
     /**
      * En este método se inicializa las listas de numeros reales e imaginarios.
      * Llama al método menú.
      *
      * @param args
      */
-    public static void main(String[] args) {
-        reales = new ArrayList<String>();
-        imaginarios = new ArrayList<String>();
+    public static void main(String[] args) {        
         menu();
     }
 
@@ -121,10 +119,9 @@ public class App {
     /**
      * Este método se encarga de realizar la suma de n números complejos.
      */
-    public static double[] suma() {
+    public static ArrayList<Double> suma() {
         double sumaR = 0;
-        double sumaI = 0;
-        double[] res= new double[] {};
+        double sumaI = 0;        
         for (String a : reales) {
             sumaR += Double.parseDouble(a);
         }
@@ -132,13 +129,13 @@ public class App {
             sumaI += Double.parseDouble(b);
         }        
         if (sumaI >= 0) {
-            System.out.println("La suma de los numeros complejos da como resultado " + sumaR + "+" + sumaI + "i");
+            System.out.println("La suma de los numeros complejos da como resultado " + sumaR + "+" + sumaI + "i\n");
             
         } else {
-            System.out.println("La suma de los numeros complejos da como resultado " + sumaR + "" + sumaI + "i");
+            System.out.println("La suma de los numeros complejos da como resultado " + sumaR + "" + sumaI + "i\n");
         }
-        res[0]=sumaR;
-        res[1]=sumaI;
+        res.add(sumaR);
+        res.add(sumaI);
         return res;
 
     }
@@ -146,7 +143,7 @@ public class App {
     /**
      * Este método se encarga de realizar la resta de n números complejos.
      */
-    public static void resta() {
+    public static ArrayList<Double> resta() {
         double sumaR = Double.parseDouble(reales.get(0));
         double sumaI = Double.parseDouble(imaginarios.get(0));
         for (int x = 1; x < reales.size(); x++) {
@@ -158,6 +155,9 @@ public class App {
         } else {
             System.out.println("La resta de los numeros complejos da como resultado " + sumaR + "" + sumaI + "i");
         }
+        res.add(sumaR);
+        res.add(sumaI);
+        return res;
     }
 
     /**
@@ -279,6 +279,10 @@ public class App {
         }
     }
     
+    /**
+     * Este método se encarga de realizar la conversión de representacion
+     * polar a cartesiana de n números complejos.
+     */
     public static void conversion2(){
         double a=0;
         double b=0;
@@ -290,4 +294,16 @@ public class App {
         }
     
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+   
 }
