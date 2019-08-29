@@ -59,6 +59,7 @@ public class AppTest
         aplicacion1.reales.add("5");        
         aplicacion1.reales.add("8");
         aplicacion1.imaginarios.add("-6");
+        //Aplicando el método resta
         aplicacion1.imaginarios.add("9");
         ArrayList<Double> resp1 = aplicacion1.resta();                         
         assertEquals("-3,00",round.format(resp1.get(0)));
@@ -68,6 +69,7 @@ public class AppTest
     
     public void testMultiplicacion()
     {                        
+        //Multiplicacion con los complejos
         DecimalFormat round= new DecimalFormat("#.00");    
         App aplicacion1= new App();                     
         aplicacion1.cantidad=2;        
@@ -82,6 +84,40 @@ public class AppTest
     }
     
     public void testDivision()
+    {                        
+        DecimalFormat round= new DecimalFormat("#.00");    
+        App aplicacion1= new App();                     
+        aplicacion1.cantidad=2;        
+        aplicacion1.reales.add("5");        
+        aplicacion1.reales.add("8");
+        aplicacion1.imaginarios.add("-6");
+        
+        
+        aplicacion1.imaginarios.add("9");
+        ArrayList<Double> resp1 = aplicacion1.resta();                         
+        assertEquals("-3,00",round.format(resp1.get(0)));
+        assertEquals("-15,00",round.format(resp1.get(1)));        
+        
+    }
+    
+    public void testModulo()
+    {                        
+        DecimalFormat round= new DecimalFormat("#.00");    
+        App aplicacion1= new App();                     
+        aplicacion1.cantidad=2;        
+        aplicacion1.reales.add("5");        
+        aplicacion1.reales.add("8");
+        aplicacion1.imaginarios.add("-6");
+        aplicacion1.imaginarios.add("9");
+        ArrayList<Double> resp1 = aplicacion1.resta();      
+        
+        
+        assertEquals("-3,00",round.format(resp1.get(0)));
+        assertEquals("-15,00",round.format(resp1.get(1)));        
+        
+    }
+    
+    public void testConjugado()
     {                        
         DecimalFormat round= new DecimalFormat("#.00");    
         App aplicacion1= new App();                     
@@ -104,6 +140,8 @@ public class AppTest
         aplicacion1.reales.add("5");        
         aplicacion1.reales.add("8");
         aplicacion1.imaginarios.add("-6");
+        
+        
         aplicacion1.imaginarios.add("9");
         ArrayList<Double> resp1 = aplicacion1.resta();                         
         assertEquals("-3,00",round.format(resp1.get(0)));
@@ -111,7 +149,7 @@ public class AppTest
         
     }
     
-    /*public void testResta()
+    public void testConversiones()
     {                        
         DecimalFormat round= new DecimalFormat("#.00");    
         App aplicacion1= new App();                     
@@ -124,37 +162,7 @@ public class AppTest
         assertEquals("-3,00",round.format(resp1.get(0)));
         assertEquals("-15,00",round.format(resp1.get(1)));        
         
-    }*/
-    
-    /*public void testResta()
-    {                        
-        DecimalFormat round= new DecimalFormat("#.00");    
-        App aplicacion1= new App();                     
-        aplicacion1.cantidad=2;        
-        aplicacion1.reales.add("5");        
-        aplicacion1.reales.add("8");
-        aplicacion1.imaginarios.add("-6");
-        aplicacion1.imaginarios.add("9");
-        ArrayList<Double> resp1 = aplicacion1.resta();                         
-        assertEquals("-3,00",round.format(resp1.get(0)));
-        assertEquals("-15,00",round.format(resp1.get(1)));        
-        
-    }*/
-    
-    /*public void testResta()
-    {                        
-        DecimalFormat round= new DecimalFormat("#.00");    
-        App aplicacion1= new App();                     
-        aplicacion1.cantidad=2;        
-        aplicacion1.reales.add("5");        
-        aplicacion1.reales.add("8");
-        aplicacion1.imaginarios.add("-6");
-        aplicacion1.imaginarios.add("9");
-        ArrayList<Double> resp1 = aplicacion1.resta();                         
-        assertEquals("-3,00",round.format(resp1.get(0)));
-        assertEquals("-15,00",round.format(resp1.get(1)));        
-        
-    }*/
+    }
         
     
     
