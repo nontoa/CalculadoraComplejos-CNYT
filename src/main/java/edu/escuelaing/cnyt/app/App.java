@@ -14,15 +14,17 @@ public class App {
     public static ArrayList<String> reales = new ArrayList<String>();
     public static ArrayList<String> imaginarios = new ArrayList<String>();
     public static ArrayList<Double> res = new ArrayList<Double>();
-    /**
-     * En este método se inicializa las listas de numeros reales e imaginarios.
-     * Llama al método menú.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {        
+  
+
+/**
+ * En este método se inicializa las listas de numeros reales e imaginarios.
+ * Llama al método menú.
+ *
+ * @param args
+ */
+/*public static void main(String[] args) {        
         menu();
-    }
+    }*/
 
     /**
      * En este método se muestra el menú de las operaciones a realizar con n
@@ -113,6 +115,8 @@ public class App {
                     break;
             }
         }
+        reader.close();
+        reader2.close();
 
     }
 
@@ -144,19 +148,19 @@ public class App {
      * Este método se encarga de realizar la resta de n números complejos.
      */
     public static ArrayList<Double> resta() {
-        double sumaR = Double.parseDouble(reales.get(0));
-        double sumaI = Double.parseDouble(imaginarios.get(0));
+        double sumaR1 = Double.parseDouble(reales.get(0));
+        double sumaI1 = Double.parseDouble(imaginarios.get(0));
         for (int x = 1; x < reales.size(); x++) {
-            sumaR -= Double.parseDouble(reales.get(x));
-            sumaI -= Double.parseDouble(imaginarios.get(x));
+            sumaR1 -= Double.parseDouble(reales.get(x));
+            sumaI1 -= Double.parseDouble(imaginarios.get(x));
         }
-        if (sumaI >= 0) {
-            System.out.println("La resta de los numeros complejos da como resultado " + sumaR + "+" + sumaI + "i");
+        if (sumaI1 >= 0) {
+            System.out.println("La resta de los numeros complejos da como resultado " + sumaR1 + "+" + sumaI1 + "i");
         } else {
-            System.out.println("La resta de los numeros complejos da como resultado " + sumaR + "" + sumaI + "i");
+            System.out.println("La resta de los numeros complejos da como resultado " + sumaR1 + "" + sumaI1 + "i");
         }
-        res.add(sumaR);
-        res.add(sumaI);
+        res.add(sumaR1);
+        res.add(sumaI1);
         return res;
     }
 
@@ -194,24 +198,28 @@ public class App {
     /**
      * Este método se encarga de realizar el modulo de n números complejos.
      */
-    public static void modulo() {
+    public static Double modulo() {
+        Double res=0.0;
         for (int x = 0; x < cantidad; x++) {
-            double res = Math.sqrt(Double.parseDouble(reales.get(x)) * Double.parseDouble(reales.get(x)) + Double.parseDouble(imaginarios.get(x)) * Double.parseDouble(imaginarios.get(x)));
+            res = Math.sqrt(Double.parseDouble(reales.get(x)) * Double.parseDouble(reales.get(x)) + Double.parseDouble(imaginarios.get(x)) * Double.parseDouble(imaginarios.get(x)));
             if (Double.parseDouble(imaginarios.get(x)) > 0) {
                 System.out.println("El modulo del numero complejo " + reales.get(x) + "+" + imaginarios.get(x) + "i" + " es " + res);
             } else {
                 System.out.println("El modulo del numero complejo " + reales.get(x) + "" + imaginarios.get(x) + "i" + " es " + res);
             }
-        }
+        }        
+        return res;
 
     }
 
     /**
      * Este método se encarga de realizar el conjugado de n números complejos.
      */
-    public static void conjugado() {
+    public static Complejo conjugado() {
+        Complejo r= new Complejo();
         for (int x = 0; x < cantidad; x++) {
-            if (Double.parseDouble(imaginarios.get(x)) > 0) {
+            r= new Complejo(Double.parseDouble(reales.get(x)),Double.parseDouble(imaginarios.get(x))*-1);
+            if (Double.parseDouble(imaginarios.get(x)) > 0) {                
                 System.out.println("El conjugado del numero complejo " + reales.get(x) + "+" + imaginarios.get(x) + "i" + " es " + reales.get(x) + "-" + imaginarios.get(x) + "i");
 
             } else {
@@ -219,6 +227,7 @@ public class App {
             }
 
         }
+        return r;
     }
 
     /**
@@ -256,9 +265,10 @@ public class App {
     /**
      * Este método se encarga de calcular la fase de n números complejos.
      */
-    public static void fase() {
+    public static Double fase() {
         Complejo c = new Complejo(0, 0);
         double a, b;
+        double fase=0;
         for (int x = 0; x < cantidad; x++) {
             c = new Complejo(Double.parseDouble(reales.get(x)), Double.parseDouble(imaginarios.get(x)));
             a = c.imag;
@@ -269,7 +279,7 @@ public class App {
             if (b < 0) {
                 b = b * -1;
             }
-            double fase = Math.atan2(a, b);
+            fase = Math.atan2(a, b);
             if (Double.parseDouble(imaginarios.get(x)) > 0) {
                 System.out.println("La fase del numero complejo " + reales.get(x) + "+" + imaginarios.get(x) + "i" + " es " + fase);
 
@@ -277,6 +287,7 @@ public class App {
                 System.out.println("La fase del numero complejo " + reales.get(x) + "" + imaginarios.get(x) + "i" + " es " + fase);
             }
         }
+        return fase;
     }
     
     /**
@@ -294,14 +305,21 @@ public class App {
         }
     
     }
+    
+    public static void inicializar(){
+        reales.clear();
+        imaginarios.clear();
+        res.clear();
+        cantidad=0;
+    }
 
     @Override
-    public boolean equals(Object obj) {
+        public boolean equals(Object obj) {
         return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int hashCode() {
+        public int hashCode() {
         return super.hashCode(); //To change body of generated methods, choose Tools | Templates.
     }
     
